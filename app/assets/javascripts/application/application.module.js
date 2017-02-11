@@ -39,6 +39,30 @@
                 });
             // generated routes:
             $stateProvider
+                .state('new_product_label',{
+                    url: '/product_label/new',
+                    templateUrl: 'application/templates/product_labels/form.html',
+                    controller: 'ProductLabelsController'
+                })
+            $stateProvider
+                .state('show_product_label',{
+                    url: '/product_label/:id',
+                    templateUrl: 'application/templates/product_labels/show.html',
+                    controller: 'ProductLabelsController'
+                });
+            $stateProvider
+                .state('edit_product_label',{
+                    url: '/product_label/:id/edit',
+                    templateUrl: 'application/templates/product_labels/form.html',
+                    controller: 'ProductLabelsController'
+                })
+            $stateProvider
+                .state('product_labels',{
+                    url: '/product_labels',
+                    templateUrl: 'application/templates/product_labels/index.html',
+                    controller: 'ProductLabelsController'
+                })
+            $stateProvider
                 .state('new_gallery_item',{
                     url: '/gallery_item/new',
                     templateUrl: 'application/templates/gallery_items/form.html',

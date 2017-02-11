@@ -41,6 +41,7 @@ en:
     cant_be_blank: "Can't be blank."
 
   headers:
+    product_labels: 'Product labels'
     gallery_items: 'Gallery items'
 
   datetime:
@@ -67,3 +68,13 @@ en:
       updated_at: "Updated at"
     messages:
       success_upsert: 'Gallery item successfully saved.'
+
+  product_label:
+    new: "New Product label"
+    edit: "Edit Product label"
+    fields:
+      title: "Title"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    messages:
+      success_upsert: 'Product label successfully saved.'
