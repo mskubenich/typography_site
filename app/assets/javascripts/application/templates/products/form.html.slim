@@ -1,0 +1,101 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h3 ng-show="$state.current.name == 'new_product'"
+            | {{ I18n.t('product.new' ) }}
+          h3 ng-show="$state.current.name == 'edit_product'"
+            | {{ I18n.t('product.edit' ) }}
+        .ibox-content
+          form ng-submit="submitProduct()" name="ProductForm" novalidate=true
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('product.fields.image') }}:
+                .col-sm-10
+                  div image=true ng-model="product.image"
+                  .error ng-show="ProductForm.image.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['image']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('product.fields.images') }}:
+                .col-sm-10
+                  div images=true ng-model="product.images"
+                  .error ng-show="ProductForm.images.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['images']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('product.fields.title') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('product.fields.title') }}" required=true class="{{ ProductForm.title.$invalid && submitted ? 'validation-error' : ''}}" name="title" ng-model="product.title"
+                  .error ng-show="ProductForm.title.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['title']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('product.fields.text') }}:
+                .col-sm-10
+                  div redactor=true required=true ng-model="product.text" file-upload-path="/attachments/product_text"
+                  .error ng-show="ProductForm.text.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['text']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('product.fields.offset_printing_price') }}:
+                .col-sm-10
+                  div image=true ng-model="product.offset_printing_price"
+                  .error ng-show="ProductForm.offset_printing_price.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['offset_printing_price']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('product.fields.digital_printing_price') }}:
+                .col-sm-10
+                  div image=true ng-model="product.digital_printing_price"
+                  .error ng-show="ProductForm.digital_printing_price.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['digital_printing_price']"
+                    | {{ error }}
+
+              .hr-line-dashed
+
+            .form-group
+              .row
+                .col-sm-4.col-sm-offset-2
+                  button.ladda-button.btn.btn-info data-style="expand-left" ladda="formPending"
+                    | {{ I18n.t('actions.submit') }}

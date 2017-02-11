@@ -1,0 +1,57 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h3
+            | {{ I18n.t('headers.products' ) }}
+        .ibox-content
+          .pull-left
+            #products-pagination ng-hide="count < 11"
+          .pull-right
+
+            button.btn-xs.btn.btn-info ui-sref="new_product"
+              | {{ I18n.t('product.new') }}
+
+          table.table.table-striped.table-responsive
+            thead
+              tr
+                th
+                  | {{ I18n.t('product.fields.image') }}
+                th
+                  | {{ I18n.t('product.fields.images') }}
+                th
+                  | {{ I18n.t('product.fields.title') }}
+                th
+                  | {{ I18n.t('product.fields.offset_printing_price') }}
+                th
+                  | {{ I18n.t('product.fields.digital_printing_price') }}
+                th
+                  | Created At
+                th
+                  | Actions
+            tbody
+              tr ng-repeat="product in products"
+                td
+                  | {{ product.image }}
+                td
+                  | {{ product.images }}
+                td
+                  | {{ product.title }}
+                td
+                  | {{ product.offset_printing_price }}
+                td
+                  | {{ product.digital_printing_price }}
+                td
+                  | {{ product.created_at }}
+                td.text-right
+
+                  a.btn-xs.btn.btn-info.btn-outline href="#product/{{product.id}}"
+                    | {{ I18n.t('actions.view') }}
+
+                  a.btn-xs.btn.btn-warning.btn-outline href="#product/{{product.id}}/edit"
+                    | {{ I18n.t('actions.edit') }}
+
+
+                  a.btn-xs.btn.btn-danger.btn-outline ng-click="destroy(product.id)"
+                    | {{ I18n.t('actions.delete') }}

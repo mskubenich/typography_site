@@ -39,6 +39,30 @@
                 });
             // generated routes:
             $stateProvider
+                .state('new_product',{
+                    url: '/product/new',
+                    templateUrl: 'application/templates/products/form.html',
+                    controller: 'ProductsController'
+                })
+            $stateProvider
+                .state('show_product',{
+                    url: '/product/:id',
+                    templateUrl: 'application/templates/products/show.html',
+                    controller: 'ProductsController'
+                });
+            $stateProvider
+                .state('edit_product',{
+                    url: '/product/:id/edit',
+                    templateUrl: 'application/templates/products/form.html',
+                    controller: 'ProductsController'
+                })
+            $stateProvider
+                .state('products',{
+                    url: '/products',
+                    templateUrl: 'application/templates/products/index.html',
+                    controller: 'ProductsController'
+                })
+            $stateProvider
                 .state('new_system_setting',{
                     url: '/system_setting/new',
                     templateUrl: 'application/templates/system_settings/form.html',

@@ -41,6 +41,7 @@ en:
     cant_be_blank: "Can't be blank."
 
   headers:
+    products: 'Products'
     system_settings: 'System settings'
     clients: 'Clients'
     team_members: 'Team members'
@@ -128,3 +129,18 @@ en:
       updated_at: "Updated at"
     messages:
       success_upsert: 'System setting successfully saved.'
+
+  product:
+    new: "New Product"
+    edit: "Edit Product"
+    fields:
+      image: "Image"
+      images: "Images"
+      title: "Title"
+      text: "Text"
+      offset_printing_price: "Offset printing price"
+      digital_printing_price: "Digital printing price"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    messages:
+      success_upsert: 'Product successfully saved.'

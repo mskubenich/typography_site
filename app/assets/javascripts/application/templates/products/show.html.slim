@@ -1,0 +1,86 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h2
+            | {{ product.image }}
+        .ibox-content
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('product.fields.image') }}:
+              .col-lg-10
+                img ng-src="{{ product.image.url }}" style="max-width: 100%"
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('product.fields.images') }}:
+              .col-lg-10
+                div.product_images_slider style="height: 300px;"
+                  slide-item ng-repeat="image in product.images" style="height: 300px;"
+                    img style="background-image: url({{ image.url }}); background-position: center; background-size:cover; width: 100%; height: 100%"
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('product.fields.title') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ product.title }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('product.fields.text') }}:
+              .col-lg-10
+                div ng-bind-html="getHtml(product.text)"
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('product.fields.offset_printing_price') }}:
+              .col-lg-10
+                img ng-src="{{ product.offset_printing_price.url }}" style="max-width: 100%"
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('product.fields.digital_printing_price') }}:
+              .col-lg-10
+                img ng-src="{{ product.digital_printing_price.url }}" style="max-width: 100%"
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('product.fields.created_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ product.created_at }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('product.fields.updated_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ product.updated_at }}
+            .hr-line-dashed
+
