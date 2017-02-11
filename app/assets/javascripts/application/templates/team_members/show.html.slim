@@ -1,0 +1,58 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h2
+            | {{ team_member.photo }}
+        .ibox-content
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('team_member.fields.photo') }}:
+              .col-lg-10
+                img ng-src="{{ team_member.photo.url }}" style="max-width: 100%"
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('team_member.fields.name') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ team_member.name }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('team_member.fields.position') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ team_member.position }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('team_member.fields.created_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ team_member.created_at }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('team_member.fields.updated_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ team_member.updated_at }}
+            .hr-line-dashed
+

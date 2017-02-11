@@ -41,6 +41,7 @@ en:
     cant_be_blank: "Can't be blank."
 
   headers:
+    team_members: 'Team members'
     solution_labels: 'Solution labels'
     product_labels: 'Product labels'
     gallery_items: 'Gallery items'
@@ -89,3 +90,15 @@ en:
       updated_at: "Updated at"
     messages:
       success_upsert: 'Solution label successfully saved.'
+
+  team_member:
+    new: "New Team member"
+    edit: "Edit Team member"
+    fields:
+      photo: "Photo"
+      name: "Name"
+      position: "Position"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    messages:
+      success_upsert: 'Team member successfully saved.'

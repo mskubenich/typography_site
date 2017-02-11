@@ -39,6 +39,30 @@
                 });
             // generated routes:
             $stateProvider
+                .state('new_team_member',{
+                    url: '/team_member/new',
+                    templateUrl: 'application/templates/team_members/form.html',
+                    controller: 'TeamMembersController'
+                })
+            $stateProvider
+                .state('show_team_member',{
+                    url: '/team_member/:id',
+                    templateUrl: 'application/templates/team_members/show.html',
+                    controller: 'TeamMembersController'
+                });
+            $stateProvider
+                .state('edit_team_member',{
+                    url: '/team_member/:id/edit',
+                    templateUrl: 'application/templates/team_members/form.html',
+                    controller: 'TeamMembersController'
+                })
+            $stateProvider
+                .state('team_members',{
+                    url: '/team_members',
+                    templateUrl: 'application/templates/team_members/index.html',
+                    controller: 'TeamMembersController'
+                })
+            $stateProvider
                 .state('new_solution_label',{
                     url: '/solution_label/new',
                     templateUrl: 'application/templates/solution_labels/form.html',

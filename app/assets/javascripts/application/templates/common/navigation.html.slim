@@ -18,6 +18,18 @@ nav.navbar-default.navbar-static-side.ng-scope role="navigation"
           .logo-element
             | TypographySite
         / menu links
+        li ng-class=("{active: $state.current.name.includes('team_membe')}")
+          a href="#"
+            i.fa.fa-car
+            span.nav-label.ng-binding TEAM_MEMBER
+            span.fa.arrow
+          ul.nav.nav-second-level.collapse ng-class=("{in: $state.current.name.includes('team_membe')}")
+            li.active ui-sref-active="active"
+              a.ng-binding href="#team_members"
+                | {{ I18n.t('headers.team_members') }}
+            li.active ui-sref-active="active"
+              a.ng-binding href="#team_member/new"
+                | {{ I18n.t('team_member.new') }}
         li ng-class=("{active: $state.current.name.includes('solution_labe')}")
           a href="#"
             i.fa.fa-car

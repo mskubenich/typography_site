@@ -1,0 +1,59 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h3 ng-show="$state.current.name == 'new_team_member'"
+            | {{ I18n.t('team_member.new' ) }}
+          h3 ng-show="$state.current.name == 'edit_team_member'"
+            | {{ I18n.t('team_member.edit' ) }}
+        .ibox-content
+          form ng-submit="submitTeamMember()" name="TeamMemberForm" novalidate=true
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('team_member.fields.photo') }}:
+                .col-sm-10
+                  div image=true ng-model="team_member.photo"
+                  .error ng-show="TeamMemberForm.photo.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['photo']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('team_member.fields.name') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('team_member.fields.name') }}" required=true class="{{ TeamMemberForm.name.$invalid && submitted ? 'validation-error' : ''}}" name="name" ng-model="team_member.name"
+                  .error ng-show="TeamMemberForm.name.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['name']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('team_member.fields.position') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('team_member.fields.position') }}" required=true class="{{ TeamMemberForm.position.$invalid && submitted ? 'validation-error' : ''}}" name="position" ng-model="team_member.position"
+                  .error ng-show="TeamMemberForm.position.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['position']"
+                    | {{ error }}
+
+              .hr-line-dashed
+
+            .form-group
+              .row
+                .col-sm-4.col-sm-offset-2
+                  button.ladda-button.btn.btn-info data-style="expand-left" ladda="formPending"
+                    | {{ I18n.t('actions.submit') }}
