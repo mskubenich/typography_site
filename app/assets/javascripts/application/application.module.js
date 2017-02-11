@@ -39,6 +39,30 @@
                 });
             // generated routes:
             $stateProvider
+                .state('new_system_setting',{
+                    url: '/system_setting/new',
+                    templateUrl: 'application/templates/system_settings/form.html',
+                    controller: 'SystemSettingsController'
+                })
+            $stateProvider
+                .state('show_system_setting',{
+                    url: '/system_setting/:id',
+                    templateUrl: 'application/templates/system_settings/show.html',
+                    controller: 'SystemSettingsController'
+                });
+            $stateProvider
+                .state('edit_system_setting',{
+                    url: '/system_setting/:id/edit',
+                    templateUrl: 'application/templates/system_settings/form.html',
+                    controller: 'SystemSettingsController'
+                })
+            $stateProvider
+                .state('system_settings',{
+                    url: '/system_settings',
+                    templateUrl: 'application/templates/system_settings/index.html',
+                    controller: 'SystemSettingsController'
+                })
+            $stateProvider
                 .state('new_client',{
                     url: '/client/new',
                     templateUrl: 'application/templates/clients/form.html',

@@ -41,6 +41,7 @@ en:
     cant_be_blank: "Can't be blank."
 
   headers:
+    system_settings: 'System settings'
     clients: 'Clients'
     team_members: 'Team members'
     solution_labels: 'Solution labels'
@@ -114,3 +115,16 @@ en:
       updated_at: "Updated at"
     messages:
       success_upsert: 'Client successfully saved.'
+
+  system_setting:
+    new: "New System setting"
+    edit: "Edit System setting"
+    fields:
+      address: "Address"
+      phone_number: "Phone number"
+      site: "Site"
+      email: "Email"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    messages:
+      success_upsert: 'System setting successfully saved.'

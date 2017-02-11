@@ -1,0 +1,69 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h2
+            | {{ system_setting.address }}
+        .ibox-content
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('system_setting.fields.address') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ system_setting.address }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('system_setting.fields.phone_number') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ system_setting.phone_number }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('system_setting.fields.site') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ system_setting.site }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('system_setting.fields.email') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ system_setting.email }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('system_setting.fields.created_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ system_setting.created_at }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('system_setting.fields.updated_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ system_setting.updated_at }}
+            .hr-line-dashed
+

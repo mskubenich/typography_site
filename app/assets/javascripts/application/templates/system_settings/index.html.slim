@@ -1,0 +1,53 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h3
+            | {{ I18n.t('headers.system_settings' ) }}
+        .ibox-content
+          .pull-left
+            #system_settings-pagination ng-hide="count < 11"
+          .pull-right
+
+            button.btn-xs.btn.btn-info ui-sref="new_system_setting"
+              | {{ I18n.t('system_setting.new') }}
+
+          table.table.table-striped.table-responsive
+            thead
+              tr
+                th
+                  | {{ I18n.t('system_setting.fields.address') }}
+                th
+                  | {{ I18n.t('system_setting.fields.phone_number') }}
+                th
+                  | {{ I18n.t('system_setting.fields.site') }}
+                th
+                  | {{ I18n.t('system_setting.fields.email') }}
+                th
+                  | Created At
+                th
+                  | Actions
+            tbody
+              tr ng-repeat="system_setting in system_settings"
+                td
+                  | {{ system_setting.address }}
+                td
+                  | {{ system_setting.phone_number }}
+                td
+                  | {{ system_setting.site }}
+                td
+                  | {{ system_setting.email }}
+                td
+                  | {{ system_setting.created_at }}
+                td.text-right
+
+                  a.btn-xs.btn.btn-info.btn-outline href="#system_setting/{{system_setting.id}}"
+                    | {{ I18n.t('actions.view') }}
+
+                  a.btn-xs.btn.btn-warning.btn-outline href="#system_setting/{{system_setting.id}}/edit"
+                    | {{ I18n.t('actions.edit') }}
+
+
+                  a.btn-xs.btn.btn-danger.btn-outline ng-click="destroy(system_setting.id)"
+                    | {{ I18n.t('actions.delete') }}

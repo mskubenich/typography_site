@@ -1,0 +1,73 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h3 ng-show="$state.current.name == 'new_system_setting'"
+            | {{ I18n.t('system_setting.new' ) }}
+          h3 ng-show="$state.current.name == 'edit_system_setting'"
+            | {{ I18n.t('system_setting.edit' ) }}
+        .ibox-content
+          form ng-submit="submitSystemSetting()" name="SystemSettingForm" novalidate=true
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('system_setting.fields.address') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('system_setting.fields.address') }}" required=true class="{{ SystemSettingForm.address.$invalid && submitted ? 'validation-error' : ''}}" name="address" ng-model="system_setting.address"
+                  .error ng-show="SystemSettingForm.address.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['address']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('system_setting.fields.phone_number') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('system_setting.fields.phone_number') }}" required=true class="{{ SystemSettingForm.phone_number.$invalid && submitted ? 'validation-error' : ''}}" name="phone_number" ng-model="system_setting.phone_number"
+                  .error ng-show="SystemSettingForm.phone_number.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['phone_number']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('system_setting.fields.site') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('system_setting.fields.site') }}" required=true class="{{ SystemSettingForm.site.$invalid && submitted ? 'validation-error' : ''}}" name="site" ng-model="system_setting.site"
+                  .error ng-show="SystemSettingForm.site.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['site']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('system_setting.fields.email') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('system_setting.fields.email') }}" required=true class="{{ SystemSettingForm.email.$invalid && submitted ? 'validation-error' : ''}}" name="email" ng-model="system_setting.email"
+                  .error ng-show="SystemSettingForm.email.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['email']"
+                    | {{ error }}
+
+              .hr-line-dashed
+
+            .form-group
+              .row
+                .col-sm-4.col-sm-offset-2
+                  button.ladda-button.btn.btn-info data-style="expand-left" ladda="formPending"
+                    | {{ I18n.t('actions.submit') }}

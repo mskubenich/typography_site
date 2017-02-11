@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211134241) do
+ActiveRecord::Schema.define(version: 20170211134400) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "entity_id"
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(version: 20170211134241) do
 
   create_table "solution_labels", force: :cascade do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "system_settings", force: :cascade do |t|
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "site"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
