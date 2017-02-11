@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'ng_rails', path: '~/dev/ng_scaffold'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -51,3 +52,22 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mysql2', '0.3.20'
+gem 'slim'
+gem 'slim-rails'
+gem 'angular-rails-templates'
+gem 'bootstrap-sass'
+gem 'bootstrap-sass-extras'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+gem 'font-awesome-rails'
+gem 'cancancan', '~> 1.10'
+gem 'paperclip', '~> 4.2'
+gem 'will_paginate', '~> 3.0.6'
+gem 'i18n-js', '>= 3.0.0.rc8'
+gem 'bootstrap-tooltip-rails'
+gem 'wow-rails'
+gem 'icheck-rails'
+gem 'ladda-rails'
+gem 'figaro'
+gem 'faker'

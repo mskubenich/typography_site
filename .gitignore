@@ -6,6 +6,10 @@
 
 # Ignore bundler config.
 /.bundle
+      public/assets/
+      public/system/
+      .idea/
+      node_modules/
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -20,3 +24,4 @@
 # Ignore Byebug command history file.
 .byebug_history
 .idea/
+node_modules/
