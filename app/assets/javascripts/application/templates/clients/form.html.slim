@@ -1,0 +1,45 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h3 ng-show="$state.current.name == 'new_client'"
+            | {{ I18n.t('client.new' ) }}
+          h3 ng-show="$state.current.name == 'edit_client'"
+            | {{ I18n.t('client.edit' ) }}
+        .ibox-content
+          form ng-submit="submitClient()" name="ClientForm" novalidate=true
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('client.fields.logo') }}:
+                .col-sm-10
+                  div image=true ng-model="client.logo"
+                  .error ng-show="ClientForm.logo.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['logo']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('client.fields.title') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('client.fields.title') }}" required=true class="{{ ClientForm.title.$invalid && submitted ? 'validation-error' : ''}}" name="title" ng-model="client.title"
+                  .error ng-show="ClientForm.title.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['title']"
+                    | {{ error }}
+
+              .hr-line-dashed
+
+            .form-group
+              .row
+                .col-sm-4.col-sm-offset-2
+                  button.ladda-button.btn.btn-info data-style="expand-left" ladda="formPending"
+                    | {{ I18n.t('actions.submit') }}

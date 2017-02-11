@@ -39,6 +39,30 @@
                 });
             // generated routes:
             $stateProvider
+                .state('new_client',{
+                    url: '/client/new',
+                    templateUrl: 'application/templates/clients/form.html',
+                    controller: 'ClientsController'
+                })
+            $stateProvider
+                .state('show_client',{
+                    url: '/client/:id',
+                    templateUrl: 'application/templates/clients/show.html',
+                    controller: 'ClientsController'
+                });
+            $stateProvider
+                .state('edit_client',{
+                    url: '/client/:id/edit',
+                    templateUrl: 'application/templates/clients/form.html',
+                    controller: 'ClientsController'
+                })
+            $stateProvider
+                .state('clients',{
+                    url: '/clients',
+                    templateUrl: 'application/templates/clients/index.html',
+                    controller: 'ClientsController'
+                })
+            $stateProvider
                 .state('new_team_member',{
                     url: '/team_member/new',
                     templateUrl: 'application/templates/team_members/form.html',

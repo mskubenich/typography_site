@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211134153) do
+ActiveRecord::Schema.define(version: 20170211134241) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "entity_id"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20170211134153) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.integer  "logo_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["logo_id"], name: "index_clients_on_logo_id"
   end
 
   create_table "gallery_items", force: :cascade do |t|

@@ -1,0 +1,48 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h2
+            | {{ client.logo }}
+        .ibox-content
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('client.fields.logo') }}:
+              .col-lg-10
+                img ng-src="{{ client.logo.url }}" style="max-width: 100%"
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('client.fields.title') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ client.title }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('client.fields.created_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ client.created_at }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('client.fields.updated_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ client.updated_at }}
+            .hr-line-dashed
+

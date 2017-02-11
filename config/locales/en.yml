@@ -41,6 +41,7 @@ en:
     cant_be_blank: "Can't be blank."
 
   headers:
+    clients: 'Clients'
     team_members: 'Team members'
     solution_labels: 'Solution labels'
     product_labels: 'Product labels'
@@ -102,3 +103,14 @@ en:
       updated_at: "Updated at"
     messages:
       success_upsert: 'Team member successfully saved.'
+
+  client:
+    new: "New Client"
+    edit: "Edit Client"
+    fields:
+      logo: "Logo"
+      title: "Title"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    messages:
+      success_upsert: 'Client successfully saved.'
