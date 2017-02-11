@@ -39,6 +39,30 @@
                 });
             // generated routes:
             $stateProvider
+                .state('new_solution_label',{
+                    url: '/solution_label/new',
+                    templateUrl: 'application/templates/solution_labels/form.html',
+                    controller: 'SolutionLabelsController'
+                })
+            $stateProvider
+                .state('show_solution_label',{
+                    url: '/solution_label/:id',
+                    templateUrl: 'application/templates/solution_labels/show.html',
+                    controller: 'SolutionLabelsController'
+                });
+            $stateProvider
+                .state('edit_solution_label',{
+                    url: '/solution_label/:id/edit',
+                    templateUrl: 'application/templates/solution_labels/form.html',
+                    controller: 'SolutionLabelsController'
+                })
+            $stateProvider
+                .state('solution_labels',{
+                    url: '/solution_labels',
+                    templateUrl: 'application/templates/solution_labels/index.html',
+                    controller: 'SolutionLabelsController'
+                })
+            $stateProvider
                 .state('new_product_label',{
                     url: '/product_label/new',
                     templateUrl: 'application/templates/product_labels/form.html',

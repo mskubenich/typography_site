@@ -18,6 +18,18 @@ nav.navbar-default.navbar-static-side.ng-scope role="navigation"
           .logo-element
             | TypographySite
         / menu links
+        li ng-class=("{active: $state.current.name.includes('solution_labe')}")
+          a href="#"
+            i.fa.fa-car
+            span.nav-label.ng-binding SOLUTION_LABEL
+            span.fa.arrow
+          ul.nav.nav-second-level.collapse ng-class=("{in: $state.current.name.includes('solution_labe')}")
+            li.active ui-sref-active="active"
+              a.ng-binding href="#solution_labels"
+                | {{ I18n.t('headers.solution_labels') }}
+            li.active ui-sref-active="active"
+              a.ng-binding href="#solution_label/new"
+                | {{ I18n.t('solution_label.new') }}
         li ng-class=("{active: $state.current.name.includes('product_labe')}")
           a href="#"
             i.fa.fa-car

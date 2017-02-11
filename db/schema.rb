@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211133957) do
+ActiveRecord::Schema.define(version: 20170211134051) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "entity_id"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20170211133957) do
   create_table "sessions", force: :cascade do |t|
     t.string   "token"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "solution_labels", force: :cascade do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

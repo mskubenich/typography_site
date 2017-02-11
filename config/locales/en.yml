@@ -41,6 +41,7 @@ en:
     cant_be_blank: "Can't be blank."
 
   headers:
+    solution_labels: 'Solution labels'
     product_labels: 'Product labels'
     gallery_items: 'Gallery items'
 
@@ -78,3 +79,13 @@ en:
       updated_at: "Updated at"
     messages:
       success_upsert: 'Product label successfully saved.'
+
+  solution_label:
+    new: "New Solution label"
+    edit: "Edit Solution label"
+    fields:
+      title: "Title"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    messages:
+      success_upsert: 'Solution label successfully saved.'
