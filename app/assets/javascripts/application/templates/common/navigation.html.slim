@@ -18,6 +18,18 @@ nav.navbar-default.navbar-static-side.ng-scope role="navigation"
           .logo-element
             | TypographySite
         / menu links
+        li ng-class=("{active: $state.current.name.includes('orde')}")
+          a href="#"
+            i.fa.fa-car
+            span.nav-label.ng-binding ORDER
+            span.fa.arrow
+          ul.nav.nav-second-level.collapse ng-class=("{in: $state.current.name.includes('orde')}")
+            li.active ui-sref-active="active"
+              a.ng-binding href="#orders"
+                | {{ I18n.t('headers.orders') }}
+            li.active ui-sref-active="active"
+              a.ng-binding href="#order/new"
+                | {{ I18n.t('order.new') }}
         li ng-class=("{active: $state.current.name.includes('produc')}")
           a href="#"
             i.fa.fa-car

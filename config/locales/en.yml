@@ -41,6 +41,7 @@ en:
     cant_be_blank: "Can't be blank."
 
   headers:
+    orders: 'Orders'
     products: 'Products'
     system_settings: 'System settings'
     clients: 'Clients'
@@ -144,3 +145,17 @@ en:
       updated_at: "Updated at"
     messages:
       success_upsert: 'Product successfully saved.'
+
+  order:
+    new: "New Order"
+    edit: "Edit Order"
+    fields:
+      name: "Name"
+      phone_number: "Phone number"
+      email: "Email"
+      what_are_you_interested_in: "What are you interested in"
+      comment: "Comment"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    messages:
+      success_upsert: 'Order successfully saved.'

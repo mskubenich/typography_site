@@ -1,0 +1,79 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h2
+            | {{ order.name }}
+        .ibox-content
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('order.fields.name') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ order.name }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('order.fields.phone_number') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ order.phone_number }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('order.fields.email') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ order.email }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('order.fields.what_are_you_interested_in') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ order.what_are_you_interested_in }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('order.fields.comment') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ order.comment }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('order.fields.created_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ order.created_at }}
+            .hr-line-dashed
+
+          .form-group
+            .row
+              .col-lg-2
+                label.control-label
+                  | {{ I18n.t('order.fields.updated_at') }}:
+              .col-lg-10
+                p.form-control-static
+                  | {{ order.updated_at }}
+            .hr-line-dashed
+

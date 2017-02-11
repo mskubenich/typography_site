@@ -39,6 +39,30 @@
                 });
             // generated routes:
             $stateProvider
+                .state('new_order',{
+                    url: '/order/new',
+                    templateUrl: 'application/templates/orders/form.html',
+                    controller: 'OrdersController'
+                })
+            $stateProvider
+                .state('show_order',{
+                    url: '/order/:id',
+                    templateUrl: 'application/templates/orders/show.html',
+                    controller: 'OrdersController'
+                });
+            $stateProvider
+                .state('edit_order',{
+                    url: '/order/:id/edit',
+                    templateUrl: 'application/templates/orders/form.html',
+                    controller: 'OrdersController'
+                })
+            $stateProvider
+                .state('orders',{
+                    url: '/orders',
+                    templateUrl: 'application/templates/orders/index.html',
+                    controller: 'OrdersController'
+                })
+            $stateProvider
                 .state('new_product',{
                     url: '/product/new',
                     templateUrl: 'application/templates/products/form.html',

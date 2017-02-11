@@ -1,0 +1,87 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h3 ng-show="$state.current.name == 'new_order'"
+            | {{ I18n.t('order.new' ) }}
+          h3 ng-show="$state.current.name == 'edit_order'"
+            | {{ I18n.t('order.edit' ) }}
+        .ibox-content
+          form ng-submit="submitOrder()" name="OrderForm" novalidate=true
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('order.fields.name') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('order.fields.name') }}" required=true class="{{ OrderForm.name.$invalid && submitted ? 'validation-error' : ''}}" name="name" ng-model="order.name"
+                  .error ng-show="OrderForm.name.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['name']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('order.fields.phone_number') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('order.fields.phone_number') }}" required=true class="{{ OrderForm.phone_number.$invalid && submitted ? 'validation-error' : ''}}" name="phone_number" ng-model="order.phone_number"
+                  .error ng-show="OrderForm.phone_number.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['phone_number']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('order.fields.email') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('order.fields.email') }}" required=true class="{{ OrderForm.email.$invalid && submitted ? 'validation-error' : ''}}" name="email" ng-model="order.email"
+                  .error ng-show="OrderForm.email.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['email']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('order.fields.what_are_you_interested_in') }}:
+                .col-sm-10
+                  input.form-control type="text" placeholder="{{ I18n.t('order.fields.what_are_you_interested_in') }}" required=true class="{{ OrderForm.what_are_you_interested_in.$invalid && submitted ? 'validation-error' : ''}}" name="what_are_you_interested_in" ng-model="order.what_are_you_interested_in"
+                  .error ng-show="OrderForm.what_are_you_interested_in.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['what_are_you_interested_in']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('order.fields.comment') }}:
+                .col-sm-10
+                  textarea.form-control placeholder="{{ I18n.t('order.fields.comment') }}" required=true class="{{ OrderForm.comment.$invalid && submitted ? 'validation-error' : ''}}" name="comment" ng-model="order.comment" style="width: 100%"
+                  .error ng-show="OrderForm.comment.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['comment']"
+                    | {{ error }}
+
+              .hr-line-dashed
+
+            .form-group
+              .row
+                .col-sm-4.col-sm-offset-2
+                  button.ladda-button.btn.btn-info data-style="expand-left" ladda="formPending"
+                    | {{ I18n.t('actions.submit') }}
