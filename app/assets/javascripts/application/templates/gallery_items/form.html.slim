@@ -1,0 +1,45 @@
+.wrapper.wrapper-content
+  .row.animated.fadeInRight
+    .col-md-12
+      .ibox.float-e-margins
+        .ibox-title
+          h3 ng-show="$state.current.name == 'new_gallery_item'"
+            | {{ I18n.t('gallery_item.new' ) }}
+          h3 ng-show="$state.current.name == 'edit_gallery_item'"
+            | {{ I18n.t('gallery_item.edit' ) }}
+        .ibox-content
+          form ng-submit="submitGalleryItem()" name="GalleryItemForm" novalidate=true
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('gallery_item.fields.image') }}:
+                .col-sm-10
+                  div image=true ng-model="gallery_item.image"
+                  .error ng-show="GalleryItemForm.image.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['image']"
+                    | {{ error }}
+
+              .hr-line-dashed
+            .form-group
+              .row
+                .col-sm-2
+                  label.control-label
+                    | {{ I18n.t('gallery_item.fields.description') }}:
+                .col-sm-10
+                  textarea.form-control placeholder="{{ I18n.t('gallery_item.fields.description') }}" required=true class="{{ GalleryItemForm.description.$invalid && submitted ? 'validation-error' : ''}}" name="description" ng-model="gallery_item.description" style="width: 100%"
+                  .error ng-show="GalleryItemForm.description.$invalid && submitted"
+                    | {{ I18n.t('validations.cant_be_blank')}}
+
+                  .error ng-repeat="error in validation_errors['description']"
+                    | {{ error }}
+
+              .hr-line-dashed
+
+            .form-group
+              .row
+                .col-sm-4.col-sm-offset-2
+                  button.ladda-button.btn.btn-info data-style="expand-left" ladda="formPending"
+                    | {{ I18n.t('actions.submit') }}

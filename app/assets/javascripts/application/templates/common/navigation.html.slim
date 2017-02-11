@@ -18,3 +18,15 @@ nav.navbar-default.navbar-static-side.ng-scope role="navigation"
           .logo-element
             | TypographySite
         / menu links
+        li ng-class=("{active: $state.current.name.includes('gallery_ite')}")
+          a href="#"
+            i.fa.fa-car
+            span.nav-label.ng-binding GALLERY_ITEM
+            span.fa.arrow
+          ul.nav.nav-second-level.collapse ng-class=("{in: $state.current.name.includes('gallery_ite')}")
+            li.active ui-sref-active="active"
+              a.ng-binding href="#gallery_items"
+                | {{ I18n.t('headers.gallery_items') }}
+            li.active ui-sref-active="active"
+              a.ng-binding href="#gallery_item/new"
+                | {{ I18n.t('gallery_item.new') }}

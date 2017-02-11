@@ -41,6 +41,7 @@ en:
     cant_be_blank: "Can't be blank."
 
   headers:
+    gallery_items: 'Gallery items'
 
   datetime:
     ago: 'ago'
@@ -55,3 +56,14 @@ en:
     edit: 'Edit'
     delete: 'Delete'
     view: 'View'
+
+  gallery_item:
+    new: "New Gallery item"
+    edit: "Edit Gallery item"
+    fields:
+      image: "Image"
+      description: "Description"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    messages:
+      success_upsert: 'Gallery item successfully saved.'
