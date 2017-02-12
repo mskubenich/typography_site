@@ -100,9 +100,6 @@
 
                     $scope.submitGalleryItem = function(){
                         $scope.submitted = true;
-                        if($scope.GalleryItemForm.$invalid ){
-                            return false;
-                        }
 
                         $scope.formPending = true;
                         gallery_items.upsert($scope.gallery_item)

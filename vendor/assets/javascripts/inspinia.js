@@ -55,27 +55,6 @@ $(document).ready(function () {
         wheelStep: 10
     });
 
-    // Open close small chat
-    $('.open-small-chat').click(function(){
-        $(this).children().toggleClass('fa-comments').toggleClass('fa-remove');
-        $('.small-chat-box').toggleClass('active');
-    });
-
-    // Initialize slimscroll for small chat
-    $('.small-chat-box .content').slimScroll({
-        height: '234px',
-        railOpacity: 0.4
-    });
-
-    // Small todo handler
-    $('.check-link').click( function(){
-        var button = $(this).find('i');
-        var label = $(this).next('span');
-        button.toggleClass('fa-check-square').toggleClass('fa-square-o');
-        label.toggleClass('todo-completed');
-        return false;
-    });
-
     // Minimalize menu
     $('.navbar-minimalize').click(function () {
       $("body").toggleClass("mini-navbar");

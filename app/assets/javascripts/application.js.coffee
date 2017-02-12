@@ -4,8 +4,9 @@
 #= require bootstrap-sprockets
 #= require angular
 #= require angular-rails-templates
-#= require angular-bootstrap/ui-bootstrap
-#= require angular-bootstrap/ui-bootstrap-tpls
+#= require angular-ui-bootstrap/dist/ui-bootstrap
+#= require angular-ui-bootstrap/dist/ui-bootstrap-tpls
+#= require angular-animate/angular-animate
 #= require sweetalert/lib/sweet-alert
 #= require angular-sweetalert/SweetAlert
 #= require angular-ui-router
@@ -20,10 +21,8 @@
 #= require underscore
 #= require i18n
 #= require i18n/translations
-#= require angular-range-slider
 #= require_tree ../../../vendor/assets/javascripts/redactor
 #= require twbs-pagination.js
-#= require angular-bootstrap-lightbox
 #= require metisMenu/jquery.metisMenu.js
 #= require pace/pace.min.js
 #= require peity/jquery.peity.min.js
@@ -33,7 +32,6 @@
 #= require scrollspy
 #= require icheck
 #= require spin
-#= require slick/slick
 #= require ladda
 #= require angular-ladda
 #= require angular-auth-http.service

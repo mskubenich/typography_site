@@ -8,11 +8,11 @@
         'validation.email',
         'fileread',
         'ui.bootstrap',
-        'bootstrapLightbox',
         'formInput.images',
         'formInput.image',
         'toaster',
-        'AuthHttp'
+        'AuthHttp',
+        'ngAnimate'
     ]);
 
     TypographySiteLandingApp.config(['$urlRouterProvider', '$stateProvider', '$httpProvider',
@@ -26,22 +26,12 @@
                 .state('home',{
                   url: '/',
                   templateUrl: 'landing/templates/home/index.html',
-                  controller: 'HomeController'
+                  controller: 'LandingController'
                 })
                 .state('login',{
                   url: '/login',
                   templateUrl: 'landing/templates/sessions/new.html',
                   controller: 'SessionsController'
-                })
-                .state('forgot_password',{
-                  url: '/forgot_password',
-                  templateUrl: 'landing/templates/passwords/new.html',
-                  controller: 'PasswordsController'
-                })
-                .state('register',{
-                  url: '/register',
-                  templateUrl: 'landing/templates/users/new.html',
-                  controller: 'UsersController'
                 });
     }]);
 

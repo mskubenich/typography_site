@@ -27,7 +27,7 @@ class GalleryItemsController < ApplicationController
     if @gallery_item.save
       render json: { message: I18n.t('gallery_item.messages.success_upsert') }
     else
-      render json: {errors: @gallery_item.errors.full_messages }, status: :unprocessable_entity
+      render json: {errors: @gallery_item.errors }, status: :unprocessable_entity
     end
   end
   
@@ -35,7 +35,7 @@ class GalleryItemsController < ApplicationController
     if @gallery_item.update_attributes gallery_item_params
       render json: { message: I18n.t('gallery_item.messages.success_upsert') }
     else
-      render json: { errors: @gallery_item.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @gallery_item.errors }, status: :unprocessable_entity
     end
   end
   

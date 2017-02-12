@@ -8,8 +8,6 @@
         'validation.email',
         'fileread',
         'ui.bootstrap',
-        'bootstrapLightbox',
-        'ui-rangeSlider',
         'redactor',
         'formInput.images',
         'formInput.image',
@@ -24,14 +22,9 @@
 
             $httpProvider.defaults.headers.common['X-Requested-With'] = 'AngularXMLHttpRequest';
 
-            $urlRouterProvider.otherwise('home');
+            $urlRouterProvider.otherwise('gallery_items');
 
             $stateProvider
-                .state('home',{
-                  url: '',
-                  templateUrl: 'application/templates/home/index.html',
-                  controller: 'HomeController'
-                })
                 .state('profile',{
                     url: '/profile',
                     templateUrl: 'application/templates/users/edit.html',
@@ -212,19 +205,11 @@
                     templateUrl: 'application/templates/gallery_items/form.html',
                     controller: 'GalleryItemsController'
                 })
-            $stateProvider
-                .state('show_gallery_item',{
-                    url: '/gallery_item/:id',
-                    templateUrl: 'application/templates/gallery_items/show.html',
-                    controller: 'GalleryItemsController'
-                });
-            $stateProvider
                 .state('edit_gallery_item',{
                     url: '/gallery_item/:id/edit',
                     templateUrl: 'application/templates/gallery_items/form.html',
                     controller: 'GalleryItemsController'
                 })
-            $stateProvider
                 .state('gallery_items',{
                     url: '/gallery_items',
                     templateUrl: 'application/templates/gallery_items/index.html',

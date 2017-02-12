@@ -2,22 +2,11 @@ nav.navbar-default.navbar-static-side.ng-scope role="navigation"
   .slimScrollDiv style=("position: relative; overflow: hidden; width: auto; height: 100%;")
     .sidebar-collapse style=("overflow: hidden; width: auto; height: 100%;")
       ul#side-menu.nav.metismenu side-navigation=""
-        li.nav-header
-          .dropdown.profile-element dropdown=""
-            img.img-circle src='images/profile_small.jpg'
-            a.dropdown-toggle aria-expanded="false" aria-haspopup="true" dropdown-toggle="" href=""
-              span.clear
-                span.block.m-t-xs
-                  strong.font-bold David Williams
-                span.text-muted.text-xs.block
-                  | Art Director
-                  b.caret
-            ul.dropdown-menu.animated.fadeInRight.m-t-xs
-              li
-                a ui-sref="profile"  Profile
-          .logo-element
-            | TypographySite
-        / menu links
+
+        li ng-class=("{active: $state.current.name.includes('gallery_ite')}")
+          a  href="#gallery_items"
+            i.fa.fa-picture-o
+            span.nav-label.ng-binding Gallery items
         li ng-class=("{active: $state.current.name.includes('orde')}")
           a href="#"
             i.fa.fa-car
@@ -102,15 +91,3 @@ nav.navbar-default.navbar-static-side.ng-scope role="navigation"
             li.active ui-sref-active="active"
               a.ng-binding href="#product_label/new"
                 | {{ I18n.t('product_label.new') }}
-        li ng-class=("{active: $state.current.name.includes('gallery_ite')}")
-          a href="#"
-            i.fa.fa-car
-            span.nav-label.ng-binding GALLERY_ITEM
-            span.fa.arrow
-          ul.nav.nav-second-level.collapse ng-class=("{in: $state.current.name.includes('gallery_ite')}")
-            li.active ui-sref-active="active"
-              a.ng-binding href="#gallery_items"
-                | {{ I18n.t('headers.gallery_items') }}
-            li.active ui-sref-active="active"
-              a.ng-binding href="#gallery_item/new"
-                | {{ I18n.t('gallery_item.new') }}

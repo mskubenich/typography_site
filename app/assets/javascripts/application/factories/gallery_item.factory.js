@@ -6,15 +6,10 @@
             upsert: function(gallery_item){
                 var fd = new FormData();
 
-
-                fd.append('gallery_item[image][file]', gallery_item.image.file );
-                if(gallery_item.image.id != undefined){
-                    fd.append('gallery_item[image][id]', gallery_item.image.id );
-                    fd.append('gallery_item[image][removed]', !!gallery_item.image.removed );
+                if(gallery_item.image && gallery_item.image.file ){
+                    fd.append('gallery_item[image]', gallery_item.image.file );
                 }
-                if(gallery_item.description){
-                    fd.append('gallery_item[description]', gallery_item.description );
-                }
+                fd.append('gallery_item[description]', gallery_item.description || '');
 
                 if(gallery_item.id){
                     return $http.put('/gallery_items/' + gallery_item.id, fd, {

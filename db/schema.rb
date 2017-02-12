@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211134715) do
+ActiveRecord::Schema.define(version: 20170211165929) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "entity_id"
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170211134715) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["logo_id"], name: "index_clients_on_logo_id"
+    t.index ["logo_id"], name: "index_clients_on_logo_id", using: :btree
   end
 
   create_table "gallery_items", force: :cascade do |t|
@@ -36,7 +39,11 @@ ActiveRecord::Schema.define(version: 20170211134715) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["image_id"], name: "index_gallery_items_on_image_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["image_id"], name: "index_gallery_items_on_image_id", using: :btree
   end
 
   create_table "orders", force: :cascade do |t|
@@ -63,9 +70,9 @@ ActiveRecord::Schema.define(version: 20170211134715) do
     t.integer  "digital_printing_price_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["digital_printing_price_id"], name: "index_products_on_digital_printing_price_id"
-    t.index ["image_id"], name: "index_products_on_image_id"
-    t.index ["offset_printing_price_id"], name: "index_products_on_offset_printing_price_id"
+    t.index ["digital_printing_price_id"], name: "index_products_on_digital_printing_price_id", using: :btree
+    t.index ["image_id"], name: "index_products_on_image_id", using: :btree
+    t.index ["offset_printing_price_id"], name: "index_products_on_offset_printing_price_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -100,7 +107,7 @@ ActiveRecord::Schema.define(version: 20170211134715) do
     t.string   "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["photo_id"], name: "index_team_members_on_photo_id"
+    t.index ["photo_id"], name: "index_team_members_on_photo_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

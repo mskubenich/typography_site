@@ -16,10 +16,7 @@
                     | {{ I18n.t('gallery_item.fields.image') }}:
                 .col-sm-10
                   div image=true ng-model="gallery_item.image"
-                  .error ng-show="GalleryItemForm.image.$invalid && submitted"
-                    | {{ I18n.t('validations.cant_be_blank')}}
-
-                  .error ng-repeat="error in validation_errors['image']"
+                  .error ng-repeat="error in validation_errors.image"
                     | {{ error }}
 
               .hr-line-dashed
@@ -29,11 +26,8 @@
                   label.control-label
                     | {{ I18n.t('gallery_item.fields.description') }}:
                 .col-sm-10
-                  textarea.form-control placeholder="{{ I18n.t('gallery_item.fields.description') }}" required=true class="{{ GalleryItemForm.description.$invalid && submitted ? 'validation-error' : ''}}" name="description" ng-model="gallery_item.description" style="width: 100%"
-                  .error ng-show="GalleryItemForm.description.$invalid && submitted"
-                    | {{ I18n.t('validations.cant_be_blank')}}
-
-                  .error ng-repeat="error in validation_errors['description']"
+                  textarea.form-control placeholder="{{ I18n.t('gallery_item.fields.description') }}" required=true name="description" ng-model="gallery_item.description" style="width: 100%"
+                  .error ng-repeat="error in validation_errors.description"
                     | {{ error }}
 
               .hr-line-dashed

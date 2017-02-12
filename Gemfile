@@ -53,7 +53,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'mysql2', '0.3.20'
+gem 'pg'
 gem 'slim'
 gem 'slim-rails'
 gem 'angular-rails-templates'
@@ -62,8 +62,7 @@ gem 'bootstrap-sass-extras'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'font-awesome-rails'
 gem 'cancancan', '~> 1.10'
-gem 'paperclip', '~> 4.2'
-gem 'will_paginate', '~> 3.0.6'
+gem 'paperclip'
 gem 'i18n-js', '>= 3.0.0.rc8'
 gem 'bootstrap-tooltip-rails'
 gem 'wow-rails'
