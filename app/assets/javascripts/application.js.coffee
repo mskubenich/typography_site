@@ -2,7 +2,7 @@
 #= require jquery_ujs
 #= require bootstrap
 #= require bootstrap-sprockets
-#= require angular
+#= require angular/angular
 #= require angular-rails-templates
 #= require angular-ui-bootstrap/dist/ui-bootstrap
 #= require angular-ui-bootstrap/dist/ui-bootstrap-tpls
